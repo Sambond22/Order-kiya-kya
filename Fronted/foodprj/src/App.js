@@ -1,6 +1,7 @@
 import Header from "./Components/Layout/Header"
 import {Home} from "./Components/Home"
 import {Footer} from "./Components/Layout/Footer"
+import Loader from "./Components/Layout/Loader"
 import {BrowserRouter as Router, Routes,Route }  from "react-router-dom" 
 import './App.css';
 
