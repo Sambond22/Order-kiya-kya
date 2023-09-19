@@ -12,10 +12,7 @@ const Restaurant = ({restaurant}) => {
         alt={restaurant.name}
         ></img>
       </Link>
-        <img className='card-img-top mx-auto'
-            src={restaurant.images[0].url}
-            alt={restaurant.name}
-        ></img>
+       
         <div className='card-body d-flex flex-column'>
             <h5 className='card-title'>{restaurant.name}</h5>
             <p className='rest_address'>{restaurant.address}</p>

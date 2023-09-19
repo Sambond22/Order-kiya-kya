@@ -12,7 +12,7 @@ const initialState={
 };
 
 export const menuReducer=(state=initialState,action)=>{
-    switch(action,type){
+    switch(action.type){
         case GET_MENU_REQUEST:
             return{
                 ...state,
