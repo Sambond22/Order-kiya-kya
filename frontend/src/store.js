@@ -8,11 +8,15 @@ import {
     import { restaurantReducer } from './Reducers/restaurantReducer';
     import {menuReducer} from "./Reducers/menuReducer";
     import {cartReducer} from "./Reducers/cartReducer.js";
+import { authReducer, forgotPasswordReducer, userReducer } from "./Reducers/userReducer";
     
     const reducer = combineReducers({
     restaurants: restaurantReducer,
     menus:menuReducer,
     cart:cartReducer,
+    auth:authReducer,
+    user:userReducer,
+    forgotPassword:forgotPasswordReducer,
     });
     let initialState = {
         cart:{
