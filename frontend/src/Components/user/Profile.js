@@ -1,6 +1,6 @@
 import React from 'react'
-import {Link} from  "react-redux";
-import { UseSelector, useSelector } from 'react-redux/es/hooks/useSelector';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
 import Loader from "../Layout/Loader";
 
 const Profile = () => {

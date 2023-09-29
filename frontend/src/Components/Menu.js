@@ -4,13 +4,15 @@ import { useParams, useSearchParams } from 'react-router-dom';
 import {getMenus} from '../Actions/menuAction';
 import { getRestaurants } from '../Actions/restaurantAction';
 import Fooditem from './Fooditem';
-
+import { setRestaurantId } from '../Actions/cartActions';
 const Menu = (storeId) => {
 
 const {id}=useParams();
 const dispatch=useDispatch();
 
 const {menus,loading,error}=useSelector((state)=>state.menus);
+
+dispatch(setRestaurantId(id));
 
 useEffect(()=>{
     dispatch(getMenus(id));

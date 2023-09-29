@@ -5,7 +5,8 @@ import {
      UPDATE_CART_QUANTITY,
     CLEAR_CART,
     SAVE_DELIVERY_INFO,
-    UPDATE_DELIVERY_INFO
+    UPDATE_DELIVERY_INFO,
+    SET_RESTAURANT_ID,
 }from "../Constants/cartConstant";
 
 export const addItemToCart=(id,quantity)=>async(dispatch,getState)=>{
@@ -54,26 +55,14 @@ export const clearCart=()=>(dispatch)=>{
     localStorage.removeItem("cartItems");
 };
 
-export const saveDeliveryInfo= (deliveryInfo)=>(dispatch,getState)=>{
-    try{
-        const existingDeliveryInfo=getState().cart.deliveryInfo;
-        if(existingDeliveryInfo){
-            dispatch({
-                type:UPDATE_DELIVERY_INFO,payload:deliveryInfo,
-            });
-        }
-        else{
+export const saveDeliveryInfo= (deliveryInfo)=>(dispatch)=>{
+  
             dispatch({
                 type:SAVE_DELIVERY_INFO,
                 payload:deliveryInfo,
             });
-        }
-    }
-    catch(error){
-
-    }
-};
-
+        };
+  
 export const updateDeliveryInfo=(deliveryInfo)=>(dispatch)=>{
     try{
         dispatch({
@@ -83,4 +72,11 @@ export const updateDeliveryInfo=(deliveryInfo)=>(dispatch)=>{
     }catch(error){
 
     }
+};
+
+export const setRestaurantId=(id)=>{
+    return{
+        type:SET_RESTAURANT_ID,
+        payload:id,
+    };
 };

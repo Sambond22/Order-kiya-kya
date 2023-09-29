@@ -10,9 +10,12 @@ import Login from "./Components/user/Login";
 import Register from './Components/user/Register';
 import { useEffect } from 'react';
 import { loadUser } from './Actions/userActions';
-import { Profile } from './Components/user/Profile';
+import  Profile  from  './Components/user/Profile';
 import store from "./store";
 import UpdateProfile from './Components/user/UpdateProfile';
+import ForgotPassword from './Components/user/ForgotPassword';
+import NewPassword from './Components/user/NewPassword';
+import ConfirmOrder from './Components/cart/ConfirmOrder';
 
 function App() {
 
@@ -32,10 +35,13 @@ function App() {
             <Route path='/delivery' element={<Delivery></Delivery>} exact></Route>
             {/* user */}
             <Route path='/users/login'
-             element={<Login></Login>}></Route>
-             <Route path='/users/signup' element={<Register></Register>}></Route>
-            <Route path='/users/me' element={<Profile></Profile>}></Route>
-            <Route path='/users/me/update' element={<UpdateProfile></UpdateProfile>}></Route>
+             element={<Login></Login>} exact></Route>
+             <Route path='/users/signup' element={<Register></Register>} exact></Route>
+            <Route path='/users/me' element={<Profile></Profile>} exact></Route>
+            <Route path='/users/me/update' element={<UpdateProfile></UpdateProfile>} exact></Route>
+            <Route path='/users/forgetPassword' element={<ForgotPassword></ForgotPassword>} exact></Route>
+            <Route path='/users/resetPassword/:token' element={<NewPassword></NewPassword>} exact></Route>
+            <Route path='/confirm' element={<ConfirmOrder></ConfirmOrder>}></Route>
           </Routes>
 
         </div>

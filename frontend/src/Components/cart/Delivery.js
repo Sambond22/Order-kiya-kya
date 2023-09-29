@@ -7,7 +7,7 @@ import { useNavigate} from 'react-router-dom';
 // import two hooks for connecting with redux
 import { useDispatch,useSelector } from 'react-redux';
 import { saveDeliveryInfo } from '../../Actions/cartActions';
-
+import CheckoutSteps from "./CheckoutSteps";
 const Delivery = () => {
     // create an array of country data from the imported list
     const countriesList= Object.values(countries);
@@ -27,7 +27,10 @@ const Delivery = () => {
       navigate("/confirm");
     };
   return (
+
     <div>
+
+    <CheckoutSteps delivery/>
       <div className='row wrapper'>
       <div className='col-10 col-lg-5 cartt'>
         <form onSubmit={submitHandler}>

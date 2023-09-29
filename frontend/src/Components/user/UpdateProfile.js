@@ -87,7 +87,8 @@ const UpdateProfile = () => {
                         className='form-control'
                         name='name'
                         value={name}
-                        onChange={onChange}>
+                        onChange={(e)=>setName(e.target.value)}
+                        >
                         </input>
                     </div>
     
@@ -98,7 +99,8 @@ const UpdateProfile = () => {
                         className='form-control'
                         name='email'
                         value={email}
-                        onChange={onChange}>
+                        onChange={(e)=>setEmail(e.target.value)}
+>
                         </input>
                     </div>
     
@@ -119,7 +121,8 @@ const UpdateProfile = () => {
                                 className='custom-file-input'
                                 id='customFile'
                                 accept='images/*'
-                                onChange={onChange}>
+                                onChange={onChange}
+>
                                 </input>
     
                                 <label className='custom-file-label' htmlFor='customFile'>Choose Avatar</label>
