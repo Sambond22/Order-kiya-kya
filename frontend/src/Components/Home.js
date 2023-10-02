@@ -5,21 +5,23 @@ import Loader from "../Components/Layout/Loader.js";
 import Message from '../Components/Message';
 import {useDispatch,useSelector} from  'react-redux';
 import CountRestaurant from './CountRestaurant';
-
+import { useParams } from 'react-router-dom';
 const Home = () => {
     const dispatch=useDispatch();
+    const {keyword}=useParams();
     const {
         loading: restaurantsLoading,
         error: restaurantsError,
         restaurants,
         showVegOnly,
         } = useSelector((state) => state.restaurants);
-    useEffect(()=>{
+  
+        useEffect(()=>{
         if(restaurantsError){
             return alert.error(restaurantsError);
         }
-        dispatch(getRestaurants());
-    },[dispatch,restaurantsError])
+        dispatch(getRestaurants(keyword));
+    },[dispatch,restaurantsError , keyword]);
 
     const handleSortByRatings=()=>{
         dispatch(sortByRatings());

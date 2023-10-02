@@ -9,6 +9,7 @@ import {
     import {menuReducer} from "./Reducers/menuReducer";
     import {cartReducer} from "./Reducers/cartReducer.js";
 import { authReducer, forgotPasswordReducer, userReducer } from "./Reducers/userReducer";
+import { myOrdersReducer, newOrderReducer, orderDetailsReducer } from "./Reducers/orderReducers";
     
     const reducer = combineReducers({
     restaurants: restaurantReducer,
@@ -17,6 +18,9 @@ import { authReducer, forgotPasswordReducer, userReducer } from "./Reducers/user
     auth:authReducer,
     user:userReducer,
     forgotPassword:forgotPasswordReducer,
+    newOrder:newOrderReducer,
+    myOrder:myOrdersReducer,
+    orderDetails:orderDetailsReducer,
     });
     let initialState = {
         cart:{
